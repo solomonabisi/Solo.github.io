@@ -1,0 +1,43 @@
+
+:root{
+  --fg:#111;
+  --bg:#fff;
+  --muted:#555;
+  --accent:#0a66c2;
+  --maxw:820px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --fg:#e8e8e8; --bg:#0d0f12; --muted:#a0a0a0; --accent:#66b3ff; }
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+  color:var(--fg);
+  background:var(--bg);
+}
+.container{max-width:var(--maxw); margin: 1.25rem auto 3rem; padding: 0 1rem;}
+.site-header{max-width:var(--maxw); margin: 2rem auto 0; padding: 0 1rem;}
+h1{font-size:2rem; margin:0 0 .25rem 0;}
+h2{font-size:1.125rem; margin:2rem 0 .5rem 0; border-bottom:1px solid #ddd; padding-bottom:.25rem;}
+h3{font-size:1rem; margin:1rem 0 .25rem 0;}
+p,li{font-size:0.95rem}
+.tagline{color:var(--muted); margin:0 0 .5rem 0;}
+.contact{list-style:none; display:flex; gap:.75rem; padding:0; margin:0 0 1rem 0; flex-wrap:wrap;}
+.contact a{color:var(--accent); text-decoration:none}
+.contact a:focus, .contact a:hover{ text-decoration:underline }
+.role .meta{color:var(--muted); margin:.25rem 0 .5rem 0;}
+ul{padding-left:1.1rem}
+.skip-link{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{left: 1rem; top: 1rem; width:auto; height:auto; background:#fffa; padding:.5rem .75rem; border-radius:.5rem; outline:2px solid #000;}
+.site-footer{max-width:var(--maxw); margin: 0 auto 3rem; padding: 0 1rem; color:var(--muted);}
+@media print{
+  :root{--fg:#000; --bg:#fff;}
+  body{font-size:11pt}
+  a{color:#000; text-decoration:none}
+  .site-footer{display:none}
+  .contact{gap:.5rem}
+}
